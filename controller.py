@@ -1,42 +1,44 @@
-import view
-import model
+from view import Console
+from model import Database
 
 def start():
+    c = Console()
+    db = Database()
+
     user_choice = 0
-    
     while user_choice != 8:
-        user_choice = view.main_menu()
+        user_choice = c.main_menu()
 
         if user_choice == 1:
-            phone_book = model.get_phone_book()
-            view.show_contacts(phone_book)             
+            phone_book = db.get_phone_book()
+            c.show_contacts(phone_book)             
             
         elif user_choice == 2:
-            model.open_phone_book()
-            view.load_success()
+            db.open_phone_book()
+            c.load_success()
 
         elif user_choice == 3:
-            model.save_phone_book()
-            view.save_success()          
+            db.save_phone_book()
+            c.save_success()          
 
         elif user_choice == 4:
-            new = list(view.new_contact())
-            model.update_phone_book(new)
+            new = list(c.new_contact())
+            db.update_phone_book(new)
 
         elif user_choice == 5:
-            view.show_contacts(phone_book) 
-            name = view.id_contact() 
-            new = list(view.new_contact())
-            model.update_contact(name, new)
+            c.show_contacts(phone_book) 
+            name = c.id_contact() 
+            new = list(c.new_contact())
+            db.update_contact(name, new)
 
         elif user_choice == 6:
-            name = view.id_contact()
-            model.remove_contact(name)
+            name = c.id_contact()
+            db.remove_contact(name)
           
         elif user_choice == 7:
-            search = view.find_contact()
-            result = model.search_contact(search)
-            view.show_contacts(result)
+            search = c.find_contact()
+            result = db.search_contact(search)
+            c.show_contacts(result)
             
         else: break
 
