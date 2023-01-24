@@ -1,4 +1,3 @@
-James Bond;89995555555;Spy
-Bill Gates;87773333333;Boss
-Bugs Bunny;85551111111;Rabbit
-Steve Jobs;86664442211;Dead
+Jeff Bezos;86665553322;Amazon
+Elon Musk;87774442211;Tesla
+Bill Gates;83334445566;Microsoft

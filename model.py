@@ -38,4 +38,27 @@ def search_contact(search: str):
             if str(search) in field:
                 search_results.append(line)
                 break
+    
     return search_results
+
+def remove_contact(name: str):
+    global phone_book
+    data = []
+
+    for line in phone_book:
+        if name not in line[0]:
+            data.append(line)
+    
+    phone_book = data          
+
+def update_contact(name: str, contact: list):
+    global phone_book
+    data = []
+
+    for line in phone_book:
+        if name not in line[0]:
+            data.append(line)    
+      
+    phone_book = data   
+    phone_book.append(contact)        
+

@@ -32,11 +32,15 @@ def save_success():
     print('Phonebook is saved successfully')
 
 def new_contact():
-    name = input('Enter name and surname: ')
+    name = input('\nEnter name and surname: ')
     phone = input('Enter phone number: ')
     comment = input('Enter comment: ')
     return name, phone, comment
 
 def find_contact():
-    search = input('Enter contact details: ')
-    return search    
+    search = input('\nEnter contact details: ')
+    return search       
+
+def id_contact():
+    name = input('\nEnter name of contact: ')
+    return name      

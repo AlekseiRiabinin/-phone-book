@@ -24,11 +24,15 @@ def start():
             model.update_phone_book(new)
 
         elif user_choice == 5:
-            print ('choice 5')    
+            view.show_contacts(phone_book) 
+            name = view.id_contact() 
+            new = list(view.new_contact())
+            model.update_contact(name, new)
 
         elif user_choice == 6:
-            print ('choice 6')
-
+            name = view.id_contact()
+            model.remove_contact(name)
+          
         elif user_choice == 7:
             search = view.find_contact()
             result = model.search_contact(search)
